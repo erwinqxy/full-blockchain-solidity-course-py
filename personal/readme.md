@@ -27,13 +27,22 @@
 - Allows for smart contracts
 - Smart contracts are self executing sets of instructions without 3rd parties
 - Smart contracts allow for agreement without centralized intermediaries
+- Wei is the smallest unit in Ethereum
 - [Ethereum Whitepaper](https://ethereum.org/en/whitepaper/)
 
 ### The Oracle Problem
 
+![Oracle Problem](image/oracle_problem.png)
+![Oracle Problem - Deterministic](image/deterministic.png)
+
+- Blockchain cannot access external data through API, it might cause the blockchain to be non-deterministic, fetching the data can be different at different times
+
 - Blockchain are determinstic systems
 - Blockchain Oracles: Bring external data or does computation
   - Example: Chainlink
+  - [Data Chainlink](https://data.chain.link/)
+
+![Oracle Problem - Chainlink](image/1.png)
 
 ## Blockcahin
 
@@ -49,6 +58,22 @@
 - Gas prices can get really high due to high demand. Sharding is a solution to this problem. The main chain will coordinate the shards. Shards are like mini blockchains that are connected to the main chain.
 - Layer 1: Base layer of blockchain implementation
 - Layer2: Built on top of layer 1
+
+## Solidity
+
+- Memory: Temporary storage during execution
+- EVN: Ethereum Virtual Machine. Code gets compiled down to EVM bytecode
+
+### Programming
+
+- Always define the solidity version
+- Contract is like a class
+- Note, mapping: mapping(string => unit256) public nameToFavoriteNumber
+- view, external, internal, public, private
+- memory and storage: memory is temporary, storage is permanent
+- Interfaces compile down to an ABI, where ABI is Application Binary Interface. The ABI tells solidity and other programming languages how it can interact with another contract
+- Anytime you want to interact with an already deployed smart contract you will need an ABI
+- Anything less than solidity 0.8.0 will have to import SafeMathChainlink to check for overflows
 
 # Tools
 
